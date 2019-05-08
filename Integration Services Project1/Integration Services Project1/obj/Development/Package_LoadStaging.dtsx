@@ -1,0 +1,1574 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2019 8:24:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-7DE79HGT"
+  DTS:CreatorName="LAPTOP-7DE79HGT\fatim"
+  DTS:DTSID="{DAAAB968-69DB-4014-A2BD-A6B44E14364F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1053"
+  DTS:ObjectName="Package_LoadStaging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{A2E04521-DC88-4791-AD91-45A4993B807D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ADO.Net to Execute SQL Tasks]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{98EBBFEC-7500-4D48-A73B-F8955BA587A4}"
+      DTS:ObjectName="ADO.Net to Execute SQL Tasks">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Localhost;Integrated Security=True;Application Name=SSIS-Package_LoadStaging-{98EBBFEC-7500-4D48-A73B-F8955BA587A4}Localhost;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Source_Connection_Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Connection manager set up for Load of CSV file Wine_Reviews"
+      DTS:DTSID="{1E6B3EC0-7ECF-4078-91F1-F38B69C8295A}"
+      DTS:ObjectName="CSV_Source_Connection_Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="9"
+          DTS:HeaderRowsToSkip="1"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:AlwaysCheckForRowDelimiters="False"
+          DTS:ConnectionString="C:\Users\fatim\OneDrive\Dokument\BI Analytiker\ETL-gruppuppgift\winemag-data-130k-v2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{704B1351-82D9-4E38-BC60-02B8C99AABEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C__x0022_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{DA96B8E4-B0EB-47F8-83B9-5B6A7B983F0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0022__x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{8FD988C0-27AF-43C3-A91A-5838C1F0ED76}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{7958A0CB-29EE-4E36-ABF5-C8B80DA2534B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{0CBC5458-2AC4-47A4-8762-D13BB7C868B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{57827B78-448D-42FB-B744-DC76CAD985C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 6"
+              DTS:DTSID="{BA2CBB00-AE1E-45A8-8323-FED4A628A393}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{B33007C3-3301-492B-835F-A474B7520BFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 8"
+              DTS:DTSID="{01B62611-B422-4BAF-A195-BA0EFB4458C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{AA862663-1191-4795-9055-595ADBB4709F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 10"
+              DTS:DTSID="{E9A5B816-50F1-45FF-82DB-983E7D848575}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{48F207F2-9B4D-4BFC-8D3E-B4EDE0AC7FF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 12"
+              DTS:DTSID="{6E148292-37B8-4E0D-AF7F-3DC751989B4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 13"
+              DTS:DTSID="{D9769BD9-61DC-49C5-8DA7-DC07B7EC8A41}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Connection Manager for CSV-file UTF-8"
+      DTS:DTSID="{48E93D51-BD27-4AAF-AC1D-6B290B37BA10}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4096"
+          DTS:HeaderRowsToSkip="1"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\fatim\OneDrive\Dokument\BI Analytiker\ETL-gruppuppgift\winemag-data-130k-v2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{33E576A0-500D-444B-B6D2-91D62FC8FFD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{44D22322-8C39-4B6B-88C3-DAA53232FCB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002E__x0022_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{7452FC98-33AC-4451-9EC8-2859C4C92E54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{B2538CD1-812A-4652-B6EB-5073D66ADAD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{0AE81FF5-4902-413F-B772-D6B37A6BFD57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{6711401E-E3DC-4615-9922-CD95F4E2C1F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 6"
+              DTS:DTSID="{41237AEC-4811-4A65-B9B1-6CEB89E42674}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{698E1EDC-2F31-445B-B6DC-F00F637F8B50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 8"
+              DTS:DTSID="{FDA49C38-BAAD-46FE-A5A5-BAA187CB07B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{4C9279F6-225C-4B0B-9C93-0DC3B1390FB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 10"
+              DTS:DTSID="{257EB8EA-F8F8-410B-8343-7DAFECAC00AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{F2DC8CCD-08A7-4162-8B9B-645D636B1352}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 12"
+              DTS:DTSID="{C8CD5139-C1C0-4AD7-8BF5-42E6BEEE0D18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="Column 13"
+              DTS:DTSID="{95788D15-712C-478F-BEE0-11D5C9604EB0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D3EDC358-C9F3-4273-8285-C4B42DDC3579}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1053"
+          DTS:HeaderRowsToSkip="1"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\fatim\OneDrive\Dokument\BI Analytiker\ETL-gruppuppgift\winemag-data-130k-v2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{B3363273-EB46-4E6A-B38A-3A005F6312F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{5B41A315-7FE9-433E-BB6A-8C10677B3DAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="description"
+              DTS:DTSID="{380EC662-4E59-4249-AF97-47191F7093B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="designation"
+              DTS:DTSID="{8278E95B-B0E9-4F21-AE12-2B4599E15E5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="points"
+              DTS:DTSID="{041507E6-7206-4AF2-825B-C77D5BF2E905}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{AF357870-CC18-44E4-B25C-27B0BA816200}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="province"
+              DTS:DTSID="{BDD79527-B516-4CD0-A7DD-AF4942983113}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region_1"
+              DTS:DTSID="{2A9FDBE0-41D7-48C6-AE70-28702CF2CAEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region_2"
+              DTS:DTSID="{34F94229-A879-4492-9B68-43607257722E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taster_name"
+              DTS:DTSID="{2EC0AD8C-007B-47CF-A7AB-3CF07FC2982D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taster_twitter_handle"
+              DTS:DTSID="{8B2C8875-5020-4858-BE5C-37D519A13689}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{CD2B5B6F-3D7F-4BF1-BB42-53C3C17FDBB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="variety"
+              DTS:DTSID="{C1C1D19C-DD39-4B2B-9E18-77CF4177FA1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winery"
+              DTS:DTSID="{EE669493-4B42-4135-A096-C0E54D8275B1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLEDB Connection to Load CSV in SSMS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6C82433B-DA63-4FD1-8ED3-F15F9BF95904}"
+      DTS:ObjectName="OLEDB Connection to Load CSV in SSMS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Localhost;Initial Catalog=Source_Wine;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create DB Shell Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{22C45CEE-CDC7-43EA-BD6C-DCC51CEF66B1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create DB Shell Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Create DB Shell Sequence Container\Create source database SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C50A05EC-4438-448A-BE28-1DCC911E5893}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create source database SQL Task"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98EBBFEC-7500-4D48-A73B-F8955BA587A4}"
+              SQLTask:SqlStatementSource="Create database Source_Wine&#xA;Go&#xA;&#xA;use Source_Wine&#xA;&#xA;create table wine_reviews(&#xA;ID nvarchar(max),&#xA;Country nvarchar(max),&#xA;Description nvarchar(max),&#xA;Designation nvarchar(max),&#xA;Points nvarchar(max),&#xA;Price nvarchar(max),&#xA;Province nvarchar(max),&#xA;Region_1 nvarchar(max),&#xA;Region_2 nvarchar(max),&#xA;Taster_name nvarchar(max),&#xA;Taster_twitter_handle nvarchar(max),&#xA;Title nvarchar(max),&#xA;Variety nvarchar(50),&#xA;Winery nvarchar(100)&#xA;)&#xA;&#xA;go&#xA;/*Table global_wine_Source*/&#xA;&#xA;use Source_Wine&#xA;Create table global_wine_volume_source(&#xA;ID int not null identity primary key,&#xA;Year int,&#xA;France varchar (50),&#xA;Italy varchar (50),&#xA;Portugal varchar (50),&#xA;Spain varchar(50),&#xA;Austria varchar(50),&#xA;Bel_Lux varchar(50),&#xA;Denmark varchar(50),&#xA;Finland varchar(50),&#xA;Germany varchar(50),&#xA;Greece varchar(50),&#xA;Ireland varchar(50),&#xA;Netherlands varchar(50),&#xA;Sweden varchar(50),&#xA;Switzerland varchar(50),&#xA;United_Kingdom varchar(50),&#xA;Other_WEM  varchar(50),&#xA;Bulgaria varchar(50),&#xA;Croatia varchar(50),&#xA;Georgia varchar(50),&#xA;Hungary varchar(50),&#xA;Moldova varchar(50),&#xA;Romania varchar(50),&#xA;Russia varchar(50),&#xA;Ukraine varchar(50),&#xA;Other_ECA varchar(50),&#xA;Australia varchar(50),&#xA;NewZealand varchar(50),&#xA;Canada varchar(50),&#xA;United_States varchar(50),&#xA;Argentina varchar(50),&#xA;Brazil varchar(50),&#xA;Chile varchar(50),&#xA;Mexico varchar(50),&#xA;Uruguay varchar(50),&#xA;Other_LAC varchar(50),&#xA;Algeria varchar(50),&#xA;Morocco varchar(50),&#xA;South_Africa varchar(50),&#xA;Tunisia varchar(50),&#xA;Turkey varchar(50),&#xA;Other_AME varchar(50),&#xA;China varchar(50),&#xA;Hong_Kong varchar(50),&#xA;India varchar(50),&#xA;Japan varchar(50),&#xA;Korea varchar(50),&#xA;Malaysia varchar(50),&#xA;Philippines varchar(50),&#xA;Singapore varchar(50),&#xA;Taiwan varchar(50),&#xA;Thailand varchar(50),&#xA;Other_Asia_Pacific varchar(50),&#xA;Other varchar(50),&#xA;World varchar(50),&#xA;Coeff_of_variation varchar(4)&#xA;)&#xA;go&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create DB Shell Sequence Container\Create Staging_Wine SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Creates staging DW and tables"
+          DTS:DTSID="{2DFD135C-BDEC-4F62-B29B-5EF796BD008E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create Staging_Wine SQL Task"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98EBBFEC-7500-4D48-A73B-F8955BA587A4}"
+              SQLTask:SqlStatementSource="Create database Staging_Wine&#xA;&#xA;go&#xA;&#xA;use Staging_Wine&#xA;create table Wine_reviews_staging(&#xA;ID int not null,&#xA;Country varchar(50),&#xA;Points int,&#xA;Price decimal(5),&#xA;Province nvarchar(50),&#xA;Region_1 nvarchar(50),&#xA;Title nvarchar(100),&#xA;Variety nvarchar(50),&#xA;Winery nvarchar(100)&#xA;)&#xA;Go&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;/*Table global_wine_staging*/&#xA;use Staging_Wine&#xA;&#xA;Create table Global_wine_volume_staging(&#xA;ID int not null identity primary key,&#xA;Year date,&#xA;France varchar (50),&#xA;Italy varchar (50),&#xA;Portugal varchar (50),&#xA;Spain varchar(50),&#xA;Austria varchar(50),&#xA;Bel_Lux varchar(50),&#xA;Denmark varchar(50),&#xA;Finland varchar(50),&#xA;Germany varchar(50),&#xA;Greece varchar(50),&#xA;Ireland varchar(50),&#xA;Netherlands varchar(50),&#xA;Sweden varchar(50),&#xA;Switzerland varchar(50),&#xA;United_Kingdom varchar(50),&#xA;Other_WEM  varchar(50),&#xA;Bulgaria varchar(50),&#xA;Croatia varchar(50),&#xA;Georgia varchar(50),&#xA;Hungary varchar(50),&#xA;Moldova varchar(50),&#xA;Romania varchar(50),&#xA;Russia varchar(50),&#xA;Ukraine varchar(50),&#xA;Other_ECA varchar(50),&#xA;Australia varchar(50),&#xA;NewZealand varchar(50),&#xA;Canada varchar(50),&#xA;United_States varchar(50),&#xA;Argentina varchar(50),&#xA;Brazil varchar(50),&#xA;Chile varchar(50),&#xA;Mexico varchar(50),&#xA;Uruguay varchar(50),&#xA;Other_LAC varchar(50),&#xA;Algeria varchar(50),&#xA;Morocco varchar(50),&#xA;South_Africa varchar(50),&#xA;Tunisia varchar(50),&#xA;Turkey varchar(50),&#xA;Other_AME varchar(50),&#xA;China varchar(50),&#xA;Hong_Kong varchar(50),&#xA;India varchar(50),&#xA;Japan varchar(50),&#xA;Korea varchar(50),&#xA;Malaysia varchar(50),&#xA;Philippines varchar(50),&#xA;Singapore varchar(50),&#xA;Taiwan varchar(50),&#xA;Thailand varchar(50),&#xA;Other_Asia_Pacific varchar(50),&#xA;Other varchar(50),&#xA;World varchar(50)&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create DB Shell Sequence Container\Create Wine_DW SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{AA4BB924-D63D-4B25-BB2F-2A5AB95F57C7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create Wine_DW SQL Task"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98EBBFEC-7500-4D48-A73B-F8955BA587A4}"
+              SQLTask:SqlStatementSource="Create database Wine_DW&#xA;go&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Country(&#xA;ID int identity not null Primary key,&#xA;Country_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Region(&#xA;RegionID int identity not null Primary key,&#xA;Region_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Province(&#xA;ProvinceID int identity not null Primary key,&#xA;Province_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Winery(&#xA;WineryID int identity not null Primary key,&#xA;Winery_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Variety(&#xA;VarietyID int identity not null Primary key,&#xA;Variety_Name varchar(50)&#xA;)&#xA;&#xA;/*Create Fact-tables in DW*/&#xA; use Wine_DW&#xA; Create table Wine_Review_Fact(&#xA; ID int identity not null Primary key,&#xA; CountryID int,&#xA; RegionID int,&#xA; ProvinceID int,&#xA; WineryID int,&#xA; VarietyID int,&#xA; Points int,&#xA; Price decimal,&#xA; Title nvarchar(100)&#xA; )&#xA;go&#xA;&#xA;use Wine_DW&#xA;create table Wine_Volume_Fact(&#xA;ID int identity not null Primary key,&#xA;Year date,&#xA;Sales_volume int,&#xA;CountryID int&#xA;)&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Create DB Shell Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6CB04F05-677B-43F2-B496-1DB98EB3F3F2}"
+          DTS:From="Package\Create DB Shell Sequence Container\Create source database SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Create DB Shell Sequence Container\Create Staging_Wine SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Create DB Shell Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{0E05567D-91B2-4068-B8C7-23B6A805B73D}"
+          DTS:From="Package\Create DB Shell Sequence Container\Create Staging_Wine SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Create DB Shell Sequence Container\Create Wine_DW SQL Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Source DB"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{923B41BD-3E76-466A-91DB-10BF8D898AB8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Source DB">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Source DB\Bulk Insert Task"
+          DTS:CreationName="Microsoft.BulkInsertTask"
+          DTS:Description="Bulk Insert Task"
+          DTS:DTSID="{B0FBA057-8CB5-4274-BD4E-2E72B10A46D6}"
+          DTS:ExecutableType="Microsoft.BulkInsertTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Bulk Insert Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <BulkInsertTask:BulkInsertTaskData
+              BulkInsertTask:CheckConstraints="False"
+              BulkInsertTask:CodePage="65001"
+              BulkInsertTask:SourceConnectionName="{1E6B3EC0-7ECF-4078-91F1-F38B69C8295A}"
+              BulkInsertTask:DestinationConnectionName="{6C82433B-DA63-4FD1-8ED3-F15F9BF95904}"
+              BulkInsertTask:DestinationTableName="[dbo].[wine_reviews]"
+              BulkInsertTask:FormatFile="C:\Users\fatim\OneDrive\Dokument\BI Analytiker\ETL-gruppuppgift\winemag-data-130k-v2.csv"
+              BulkInsertTask:KeepIdentity="True"
+              BulkInsertTask:KeepNulls="True"
+              BulkInsertTask:FieldTerminator="Comma {,}"
+              BulkInsertTask:RowTerminator="{LF}"
+              BulkInsertTask:MaximumErrors="100" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Source DB\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6F853126-0372-4094-A1B7-D2BF91E28107}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Source DB\Data Flow Task\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1053"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Source DB\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                          name="Column 0"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                          name="country"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[description]"
+                          length="4000"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[description]"
+                          name="description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[designation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[designation]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[designation]"
+                          name="designation"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[points]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[points]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[points]"
+                          name="points"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                          name="price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                          name="province"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region_1]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_1]"
+                          name="region_1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region_2]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_2]"
+                          name="region_2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[taster_name]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_name]"
+                          name="taster_name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_twitter_handle]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[taster_twitter_handle]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_twitter_handle]"
+                          name="taster_twitter_handle"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[title]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[title]"
+                          length="200"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[title]"
+                          name="title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[variety]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[variety]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[variety]"
+                          name="variety"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[winery]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[winery]"
+                          length="100"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[winery]"
+                          name="winery"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="Column 0" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="country" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[description]"
+                          codePage="65001"
+                          dataType="str"
+                          length="4000"
+                          name="description" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[designation]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="designation" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[points]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="points" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="price" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="province" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region_1]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="region_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region_2]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="region_2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[taster_name]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="taster_name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[taster_twitter_handle]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="taster_twitter_handle" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[title]"
+                          codePage="65001"
+                          dataType="str"
+                          length="200"
+                          name="title" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[variety]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="variety" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[winery]"
+                          codePage="65001"
+                          dataType="str"
+                          length="100"
+                          name="winery" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Load CSV in SQL Table OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[wine_reviews]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLEDB Connection to Load CSV in SSMS]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLEDB Connection to Load CSV in SSMS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="country"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[country]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[description]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="description"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[description]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[designation]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="designation"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Designation]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[designation]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[points]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="points"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Points]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[points]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[price]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="price"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[price]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[province]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="province"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Province]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region_1]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="region_1"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_1]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_1]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region_2]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="region_2"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_2]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[region_2]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[taster_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="taster_name"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taster_name]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_name]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[taster_twitter_handle]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="taster_twitter_handle"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taster_twitter_handle]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[taster_twitter_handle]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="title"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[title]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[variety]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="variety"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Variety]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[variety]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[winery]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="winery"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Winery]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[winery]" />
+                        <inputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 0]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Column 0"
+                          externalMetadataColumnId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          lineageId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="nText"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          dataType="nText"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="nText"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Designation]"
+                          dataType="nText"
+                          name="Designation" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Points]"
+                          dataType="nText"
+                          name="Points" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          dataType="nText"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Province]"
+                          dataType="nText"
+                          name="Province" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_1]"
+                          dataType="nText"
+                          name="Region_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_2]"
+                          dataType="nText"
+                          name="Region_2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taster_name]"
+                          dataType="nText"
+                          name="Taster_name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taster_twitter_handle]"
+                          dataType="nText"
+                          name="Taster_twitter_handle" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          dataType="nText"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Variety]"
+                          dataType="nText"
+                          name="Variety" />
+                        <externalMetadataColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Winery]"
+                          dataType="nText"
+                          name="Winery" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Source DB\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Load Source DB\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load StagingDB"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{602E5D81-D0F3-48F8-AB79-335D7000A436}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load StagingDB">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformations and joins"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{F1C2E1DE-DBBB-49DF-8037-42A985DAA3B3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformations and joins">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="237.333333333334,42.6666666666667"
+          Id="Package\Create DB Shell Sequence Container\Create source database SQL Task"
+          TopLeft="28,17.7999958312512" />
+        <NodeLayout
+          Size="234.666666666667,53.3333333333334"
+          Id="Package\Create DB Shell Sequence Container\Create Staging_Wine SQL Task"
+          TopLeft="30.1666643694043,71.2777720567254" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\Create DB Shell Sequence Container\Create Wine_DW SQL Task"
+          TopLeft="30.1666646674274,142.399993925095" />
+        <EdgeLayout
+          Id="Package\Create DB Shell Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="28,39.1333291645845">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="2.16666436940429,58.8111095588075"
+              Start="0,0"
+              End="-5.33333563059571,58.8111095588075">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,54.8111095588075" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,54.8111095588075"
+                    Point2="-22.5,58.8111095588075"
+                    Point3="-18.5,58.8111095588075" />
+                  <mssgle:LineSegment
+                    End="-5.33333563059571,58.8111095588075" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create DB Shell Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="147.499997702738,124.611105390059">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="89.3333336313564,39.1222218683696"
+              Start="0,0"
+              End="81.8333336313564,39.1222218683696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1222218683696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1222218683696"
+                    Point2="0,39.1222218683696"
+                    Point3="4,39.1222218683696" />
+                  <mssgle:LineSegment
+                    End="81.8333336313564,39.1222218683696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="316.666666666667,242.666666666667"
+          Size="316.666666666667,286"
+          Id="Package\Create DB Shell Sequence Container"
+          TopLeft="434.000000347694,161.888886590137" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Load Source DB\Bulk Insert Task"
+          TopLeft="13.694438928945,19.1666646391154" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load Source DB\Data Flow Task"
+          TopLeft="21.4999917422732,94.9999949634077" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="310,214.666666666667"
+          Size="310,258.666666666667"
+          Id="Package\Load Source DB"
+          TopLeft="814.166654534638,196.011107606159" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205.333333333334,54.6666666666667"
+          Size="205.333333333334,97.3333333333334"
+          Id="Package\Load StagingDB"
+          TopLeft="1559.30553232009,198.394440896875" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="224.666666666667,88.6666666666667"
+          Size="224.666666666667,131.333333333334"
+          Id="Package\Transformations and joins"
+          TopLeft="1207.98609261401,200.127774199214" />
+        <AnnotationLayout
+          Text="Enl.Krav kan vi skapa tomma tabeller i SSMS (1. source, 2. Staging, 3. DW(star-schema). EFter detta gör vi en Bulk Inser i SSIS för att fylla source.&#xA;Input från Per = Ladda ner filerna till en mapp och jobba inte i den sen (tex via en FTP-task), skapa sedan ett SSIS jobb för att f&#xA;lytta detta till en annan arbetskatalog som är unik för just min SSIS process. När man är klar tar man bort sin arbetskatalog. "
+          ParentId="Package"
+          Size="227.333333333334,183.333333333334"
+          Id="cd9f25b6-0e72-46af-b161-c118d4d65835"
+          TopLeft="877.916655174146,10.6888886977567">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Enl. krav ska alla transformeringar och joins ske i detta steg.&#xA;kom ihåg att bygga i error-handling tex csv fil med avvikelser"
+          ParentId="Package"
+          Size="326.666666666667,50.6666666666667"
+          Id="d974d79c-4a03-4836-b4b4-8e30dcd62db3"
+          TopLeft="1228.12498120281,322.616660897831">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Här kan vi lägga in ett Vy-script&#xA;där vi bla döper om kolumner om så behövs"
+          ParentId="Package"
+          Size="329.333333333334,50.6666666666667"
+          Id="a47debb4-fc4b-4756-9471-f280ed8a12c7"
+          TopLeft="878.333320245147,382.26665987889">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Source DB\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load Source DB\Data Flow Task\Flat File Source"
+          TopLeft="61.6666657477617,17.7666663489739" />
+        <NodeLayout
+          Size="282.666666666667,42.6666666666667"
+          Id="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination"
+          TopLeft="57.9166658036411,99.6666648844878" />
+        <EdgeLayout
+          Id="Package\Load Source DB\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="137.666665747762,60.4333330156406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="61.5833333892128,39.2333318688472"
+              Start="0,0"
+              End="61.5833333892128,31.7333318688472">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6166659344236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6166659344236"
+                    Point2="0,19.6166659344236"
+                    Point3="4,19.6166659344236" />
+                  <mssgle:LineSegment
+                    End="57.5833333892128,19.6166659344236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.5833333892128,19.6166659344236"
+                    Point2="61.5833333892128,19.6166659344236"
+                    Point3="61.5833333892128,23.6166659344236" />
+                  <mssgle:LineSegment
+                    End="61.5833333892128,31.7333318688472" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.57789710747694,24.6166659344236,78.7391276041667,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Source DB\Data Flow Task\Load CSV in SQL Table OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
