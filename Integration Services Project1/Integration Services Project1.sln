@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Integration Services Project1", "Integration Services Project1\Integration Services Project1.dtproj", "{6216BA92-6CA4-4F45-9FE3-7E5E610E6D46}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS projekt ETL Vindata", "Integration Services Project1\SSIS projekt ETL Vindata.dtproj", "{6216BA92-6CA4-4F45-9FE3-7E5E610E6D46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

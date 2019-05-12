@@ -11,8 +11,8 @@
   DTS:LocaleID="1053"
   DTS:ObjectName="Package_FillDW"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{893BC999-894A-4554-9F30-D21F71FA62B2}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{95DFE1D2-70D1-4C43-A61A-D5BE1E03A76C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Fill Sales Table Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{4FDD0E22-8DEE-48FF-A470-A45C8375A081}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -48,6 +49,7 @@
       DTS:refId="Package\Load Dim-tables Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{4E377CE6-C8BF-49D4-A7A4-D75243AD0600}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -90,6 +92,7 @@
       DTS:refId="Package\Post-load Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{02A4FB43-B54F-4145-AD25-C48B4A92B3A3}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -166,6 +169,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
+          Size="216,42.6666666666667"
+          Id="Package\Fill Sales Table Sequence Container\Fill FactSales Data Flow Task"
+          TopLeft="52.569430200383,11.8333312024673" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.333333333334,170.666666666667"
+          Size="285.333333333334,213.333333333334"
+          Id="Package\Fill Sales Table Sequence Container"
+          TopLeft="773.958321800455,281.08332905223" />
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\Load Dim-tables Sequence Container\Fill DIM (X) Data Flow Task"
+          TopLeft="25.5555485188961,25.166665155689" />
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\Load Dim-tables Sequence Container\Fill DIM (Y) Data Flow Task"
+          TopLeft="24.8611040847996,86.6111087994444" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="302.666666666667,184"
+          Size="302.666666666667,226.666666666667"
+          Id="Package\Load Dim-tables Sequence Container"
+          TopLeft="427.777771403392,103.277775931027" />
+        <NodeLayout
+          Size="268,42.6666666666667"
+          Id="Package\Post-load Sequence Container\Replace Foreign Keys Execute SQL Task"
+          TopLeft="65.6666568567357,40.9166619593899" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="384,151.333333333334"
+          Size="384,194"
+          Id="Package\Post-load Sequence Container"
+          TopLeft="592.708324501291,551.083327115079" />
+        <NodeLayout
           Size="172.666666666667,48.6666666666667"
           Id="Package\Pre-Load\Drop foreign keys Execute SQL Task"
           TopLeft="68.9166653814415,6.79999885320664" />
@@ -180,45 +220,8 @@
           Size="270.666666666667,225.333333333334"
           Id="Package\Pre-Load"
           TopLeft="70.8333322778345,17.7666663489739" />
-        <NodeLayout
-          Size="208,42.6666666666667"
-          Id="Package\Load Dim-tables Sequence Container\Fill DIM (X) Data Flow Task"
-          TopLeft="25.5555485188961,25.166665155689" />
-        <NodeLayout
-          Size="208,42.6666666666667"
-          Id="Package\Load Dim-tables Sequence Container\Fill DIM (Y) Data Flow Task"
-          TopLeft="24.8611040847996,86.6111087994444" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="302.666666666667,183.333333333334"
-          Size="302.666666666667,226.666666666667"
-          Id="Package\Load Dim-tables Sequence Container"
-          TopLeft="427.777771403392,103.277775931027" />
-        <NodeLayout
-          Size="216,42.6666666666667"
-          Id="Package\Fill Sales Table Sequence Container\Fill FactSales Data Flow Task"
-          TopLeft="52.569430200383,11.8333312024673" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="285.333333333334,170.666666666667"
-          Size="285.333333333334,213.333333333334"
-          Id="Package\Fill Sales Table Sequence Container"
-          TopLeft="773.958321800455,281.08332905223" />
-        <NodeLayout
-          Size="268,42.6666666666667"
-          Id="Package\Post-load Sequence Container\Replace Foreign Keys Execute SQL Task"
-          TopLeft="65.6666568567357,40.9166619593899" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="384,151.333333333334"
-          Size="384,194"
-          Id="Package\Post-load Sequence Container"
-          TopLeft="592.708324501291,551.083327115079" />
         <AnnotationLayout
-          Text="Enligt krav får indexering göras av tabellerna &#xD;&#xA;när datan är inladdad i DW"
+          Text="Enligt krav får indexering göras av tabellerna &#xA;när datan är inladdad i DW"
           ParentId="Package"
           Size="130,90.6666666666667"
           Id="c6816f4c-bbaf-4f81-b3a5-3cad148371ae"
