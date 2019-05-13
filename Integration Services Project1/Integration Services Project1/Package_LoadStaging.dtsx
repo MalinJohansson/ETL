@@ -11,8 +11,8 @@
   DTS:LocaleID="1053"
   DTS:ObjectName="Package_LoadStaging"
   DTS:PackageType="5"
-  DTS:VersionBuild="176"
-  DTS:VersionGUID="{0B50981C-06AD-4D7E-BB19-093852135340}">
+  DTS:VersionBuild="184"
+  DTS:VersionGUID="{F14FF387-FAA7-4E09-9B38-23E83758CF54}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -271,7 +271,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{98EBBFEC-7500-4D48-A73B-F8955BA587A4}"
-              SQLTask:SqlStatementSource="Create database Wine_DW&#xA;go&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Country(&#xA;ID int identity not null Primary key,&#xA;Country_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Region(&#xA;RegionID int identity not null Primary key,&#xA;Region_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Province(&#xA;ProvinceID int identity not null Primary key,&#xA;Province_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Winery(&#xA;WineryID int identity not null Primary key,&#xA;Winery_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Variety(&#xA;VarietyID int identity not null Primary key,&#xA;Variety_Name varchar(50)&#xA;)&#xA;&#xA;/*Create Fact-tables in DW*/&#xA; use Wine_DW&#xA; Create table Wine_Review_Fact(&#xA; ID int identity not null Primary key,&#xA; CountryID int,&#xA; RegionID int,&#xA; ProvinceID int,&#xA; WineryID int,&#xA; VarietyID int,&#xA; Points int,&#xA; Price decimal,&#xA; Title nvarchar(100)&#xA; )&#xA;go&#xA;&#xA;use Wine_DW&#xA;create table Wine_Volume_Fact(&#xA;ID int identity not null Primary key,&#xA;Year date,&#xA;Sales_volume int,&#xA;CountryID int&#xA;)&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Create database Wine_DW&#xA;go&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Country(&#xA;ID int identity not null Primary key,&#xA;Country_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Region(&#xA;RegionID int identity not null Primary key,&#xA;Region_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Province(&#xA;ProvinceID int identity not null Primary key,&#xA;Province_Name varchar(50)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Winery(&#xA;WineryID int identity not null Primary key,&#xA;Winery_Name varchar(100)&#xA;)&#xA;&#xA;use Wine_DW&#xA;Create table DIM_Variety(&#xA;VarietyID int identity not null Primary key,&#xA;Variety_Name varchar(50)&#xA;)&#xA;&#xA;/*Create Fact-tables in DW*/&#xA; use Wine_DW&#xA; Create table Wine_Review_Fact(&#xA; ID int identity not null Primary key,&#xA; CountryID int,&#xA; RegionID int,&#xA; ProvinceID int,&#xA; WineryID int,&#xA; VarietyID int,&#xA; Points int,&#xA; Price decimal,&#xA; Title nvarchar(100)&#xA; )&#xA;go&#xA;&#xA;use Wine_DW&#xA;create table Wine_Volume_Fact(&#xA;ID int identity not null Primary key,&#xA;Year int,&#xA;Sales_volume varchar(100),&#xA;CountryID int&#xA;)&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -6447,7 +6447,8 @@
       DTS:From="Package\Create DB Shell Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Load Source DB" />
+      DTS:To="Package\Load Source DB"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -6455,7 +6456,8 @@
       DTS:From="Package\Load Source DB"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Create views with cast of datatypes and selected columns" />
+      DTS:To="Package\Create views with cast of datatypes and selected columns"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -6463,7 +6465,8 @@
       DTS:From="Package\Execute SQL Task (Drop database)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Create DB Shell Sequence Container" />
+      DTS:To="Package\Create DB Shell Sequence Container"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -6471,7 +6474,8 @@
       DTS:From="Package\Create views with cast of datatypes and selected columns"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Fill staging tables" />
+      DTS:To="Package\Fill staging tables"
+      DTS:Value="2" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -6484,7 +6488,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="237.333333333334,42.6666666666667"
           Id="Package\Create DB Shell Sequence Container\Create source database SQL Task"
@@ -6502,7 +6506,7 @@
           TopLeft="146.388887750606,60.4666624979179">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,25.977775954273"
               Start="0,0"
               End="0,18.477775954273">
@@ -6524,15 +6528,15 @@
           TopLeft="142.23610893699,139.777771785524">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,33.6777771398097"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.6777771398099"
               Start="0,0"
-              End="0,26.1777771398097">
+              End="0,26.1777771398099">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1777771398097" />
+                    End="0,26.1777771398099" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6545,7 +6549,7 @@
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="316.666666666667,270.666666666667"
-          Size="316.666666666667,313.333333333334"
+          Size="316.666666666667,314"
           Id="Package\Create DB Shell Sequence Container"
           TopLeft="70.8055613152684,204.499996939302" />
         <NodeLayout
@@ -6565,7 +6569,7 @@
           TopLeft="190.0555453524,61.7777731802728">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="19.7777759896388,33.8888875199691"
               Start="0,0"
               End="19.7777759896388,26.3888875199691">
@@ -6601,7 +6605,7 @@
           TopLeft="209.833321342039,138.333327366909">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="17.8333317894067,33.1333319540817"
               Start="0,0"
               End="17.8333317894067,25.6333319540817">
@@ -6678,7 +6682,7 @@
           TopLeft="387.472227981935,361.166663605969">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="90.5833204500378,-24.5444454181867"
               Start="0,0"
               End="83.0833204500378,-24.5444454181867">
@@ -6704,7 +6708,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="19.9872071000189,1,50.60890625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6712,7 +6718,7 @@
           TopLeft="804.055548431973,336.622218187782">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="61.5694381725031,17.561111631559"
               Start="0,0"
               End="54.0694381725031,17.561111631559">
@@ -6738,18 +6744,20 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="5.4802659612515,-17.609375,50.60890625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="206.027778678056,133.66666503946">
+          TopLeft="123.211111471222,133.66666503946">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="23.1111159705457,70.8333318998421"
+              StartConnector="{assembly:Null}"
+              EndConnector="105.927783177379,70.8333318998421"
               Start="0,0"
-              End="23.1111159705457,63.3333318998421">
+              End="105.927783177379,63.3333318998421">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6760,19 +6768,21 @@
                     Point2="0,35.4166659499211"
                     Point3="4,35.4166659499211" />
                   <mssgle:LineSegment
-                    End="19.1111159705457,35.4166659499211" />
+                    End="101.927783177379,35.4166659499211" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.1111159705457,35.4166659499211"
-                    Point2="23.1111159705457,35.4166659499211"
-                    Point3="23.1111159705457,39.4166659499211" />
+                    Point1="101.927783177379,35.4166659499211"
+                    Point2="105.927783177379,35.4166659499211"
+                    Point3="105.927783177379,39.4166659499211" />
                   <mssgle:LineSegment
-                    End="23.1111159705457,63.3333318998421" />
+                    End="105.927783177379,63.3333318998421" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="27.6594384636896,40.4166659499211,50.60890625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6780,7 +6790,7 @@
           TopLeft="1082.72915404362,511.849996486008">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,82.9722150999636"
               Start="0,0"
               End="0,75.4722150999636">
@@ -6794,7 +6804,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,31.9314200499818,50.60890625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
@@ -7045,7 +7057,7 @@
     design-time-name="Package\Load Source DB\Fill Source table from CSV Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="133.333333333334,42.6666666666667"
           Id="Package\Load Source DB\Fill Source table from CSV Data Flow Task\Source CSV"
@@ -7085,7 +7097,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7108,7 +7122,7 @@
     design-time-name="Package\Load Source DB\Fill SOurce table from Ecxel Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="256,42.6666666666667"
           Id="Package\Load Source DB\Fill SOurce table from Ecxel Data Flow Task\OLE DB Destination SQL Source table"
@@ -7148,7 +7162,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

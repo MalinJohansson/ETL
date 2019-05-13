@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>Integration Services Project1</Name>
-    <LastWriteTime>2019-05-10T14:28:12.8467686Z</LastWriteTime>
+    <Name>SSIS projekt ETL Vindata</Name>
+    <LastWriteTime>2019-05-13T10:28:35.1169488Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package_LoadStaging.dtsx</Name>
-      <LastWriteTime>2019-05-12T15:19:16.8583891Z</LastWriteTime>
+      <LastWriteTime>2019-05-13T10:28:35.0243369Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Package_FillDW.dtsx</Name>
-      <LastWriteTime>2019-05-12T15:16:13.3340118Z</LastWriteTime>
+      <LastWriteTime>2019-05-13T10:36:55.3335644Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
